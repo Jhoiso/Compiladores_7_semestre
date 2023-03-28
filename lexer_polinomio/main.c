@@ -8,7 +8,7 @@ typedef enum Token {
 	Indeterminado,
 	Multiplicacao,
 	Divisao,
-	Polinomio,
+	Potencia,
 } Token;
 
 int contador_mult (char *caracteres, int pos){
@@ -49,7 +49,7 @@ void tokenizar(char *caracteres, int lenth, int *vetorTokens) {
 				if (numero_mult % 2 == 0){
 					numeroDeP = numero_mult / 2;
 					for (int l = 0; l < numeroDeP; l++)
-						vetorTokens[i+l] = Polinomio;
+						vetorTokens[i+l] = Potencia;
 
 					printf("%d", numero_mult);
 				}
@@ -60,7 +60,7 @@ void tokenizar(char *caracteres, int lenth, int *vetorTokens) {
 						numeroDeP = (numero_mult - 1)/2;
 					int posicMult = numeroDeP+1;
 					for (int l = 0; l < numeroDeP; l++)
-						vetorTokens[i+l] = Polinomio;
+						vetorTokens[i+l] = Potencia;
 					
 					vetorTokens[i+posicMult] = Multiplicacao;
 					}
@@ -113,7 +113,7 @@ int main(int argc, char **argv) {
 			else if (vetorTokens[k] == 4)
 				printf("Divisao\n");
 			else if (vetorTokens[k] == 5)
-				printf("Polinomio\n");
+				printf("Potencia\n");
 			// else if (vetorTokens[k] == 9999)
 			// 	printf("");
 		
