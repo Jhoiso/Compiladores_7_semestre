@@ -4,7 +4,7 @@ CFLAGS = -Wall -g
 all: main
 
 build: main.o
-	$(CC) $(CFLAGS) -o main main.o
+	$(CC) $(CFLAGS) -o main main.o -lm
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
